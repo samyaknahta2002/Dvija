@@ -7,22 +7,25 @@
     {name: "Hello"},
     {name: "World"},
   ]
+  let options = false;
 </script>
-<div class="bg-[#f5e6c8] w-full h-screen max-h-[945px]" style="font-family: TuskerGrotesk, sans-serif;background-image: url(grain.png);">
+<div class="bg-[#f5e6c8] w-full h-auto min-h-screen" style="font-family: TuskerGrotesk, sans-serif;background-image: url(grain.png);">
     <div class="navbar fixed top-0 w-full p-4 z-50">
-        <div class="w-full rounded-md px-4 py-2 bg-white bg-opacity-80 backdrop-blur flex items-center justify-between">
+        <div class="w-full rounded-md px-4 py-2 bg-white bg-opacity-80 backdrop-blur flex items-center justify-between" style="font-family: Supreme, sans-serif;">
             <img src="logo.png" alt="Logo" class="w-40 max-[1080px]:w-28">
-            <div class="min-[900px]:hidden">
-              <i class="fa fa-bars"></i>
-              <div class="w-72 absolute top-10 right-4">
-                <a href="/" class="px-2 py-1">Home</a>
-                <a href="/" class="px-2 py-1">Global trends & SDG progress</a>
-                <a href="/" class="px-2 py-1">Country profiles</a>
-                <a href="/" class="px-2 py-1">Data centre & resources</a>
-                <a href="/" class="px-2 py-1">Stories</a>
-              </div>
+            <div class="min-[910px]:hidden">
+                <i class="fa fa-bars" on:click={() => {options = !options}}></i>
+                {#if options}
+                    <div class="w-72 absolute top-14 right-0 grid p-1 space-y-1 bg-white rounded-md">
+                      <a href="/" class="px-3 py-1">Home</a>
+                      <a href="/" class="px-3 py-1">Global trends & SDG progress</a>
+                      <a href="/" class="px-3 py-1">Country profiles</a>
+                      <a href="/" class="px-3 py-1">Data centre & resources</a>
+                      <a href="/" class="px-3 py-1">Stories</a>
+                    </div>
+                {/if}
             </div>
-            <div class="flex items-center gap-4 uppercase max-[900px]:hidden max-[1080px]:gap-1 max-[1080px]:text-sm" style="font-family: Supreme, sans-serif;">
+            <div class="flex items-center gap-4 uppercase max-[910px]:hidden max-[1080px]:gap-1 max-[1080px]:text-sm">
                 <a href="/" class="px-2 py-1">Home</a>
                 <a href="/" class="px-2 py-1">Global trends & SDG progress</a>
                 <a href="/" class="px-2 py-1">Country profiles</a>
@@ -31,12 +34,12 @@
             </div>
         </div>
     </div>
-    <div class="w-full h-screen flex max-h-[945px]">
-        <div class="w-1/2 my-auto px-20 uppercase max-[450px]:w-full max-[450px]:px-10">
+    <div class="w-full h-auto min-h-screen flex py-2">
+        <div class="w-1/2 my-auto px-20 uppercase max-[700px]:w-full max-[900px]:px-10">
             <div class="text-lg tracking-wider mb-2">The Child Marriage Data Portal</div>
             <div class="text-6xl font-extrabold leading-tight">Every 3 seconds<br>a girl gets married<br>somewhere in the world</div>
         </div>
-        <div class="w-1/2 my-auto px-20 max-[450px]:hidden">
+        <div class="w-1/2 my-auto px-20 max-[700px]:hidden max-[900px]:px-10">
           
         </div>
     </div>
